@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "ts-node ./bin/www.ts",
-    "dev": "nodemon ./bin/www.ts"
+    "dev": "nodemon ./bin/www.ts",
+    "populate": "ts-node ./populate.ts"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
