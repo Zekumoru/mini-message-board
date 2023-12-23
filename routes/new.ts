@@ -10,24 +10,31 @@ router.get('/', (_req, res) => {
 });
 
 const personalIp = process.env.PERSONAL_IP;
+const devName = process.env.DEV_NAME;
+
 router.post('/', (req: NewRequest, res, next) => {
   if (req.app.get('env') === 'development') {
     next();
     return;
   }
 
-  const ip = req.headers['x-forwarded-for'];
-  if (ip === personalIp) {
-    next();
+  if (req.body.user === devName) {
+    const ip = req.headers['x-forwarded-for'];
+    if (ip === personalIp) {
+      next();
+      return;
+    }
+
+    res.status(403).render('form', {
+      title,
+      errorMessage: 'You do not have permission to use that name!',
+      user: req.body.user,
+      text: req.body.text,
+    } as NewLocals);
     return;
   }
 
-  res.status(403).render('form', {
-    title,
-    errorMessage: 'You do not have permission to use that name!',
-    user: req.body.user,
-    text: req.body.text,
-  } as NewLocals);
+  next();
 });
 
 router.post('/', async (req: NewRequest, res) => {
