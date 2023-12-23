@@ -8,17 +8,17 @@
     <%= locals.title %>
   </h1>
   <% if (locals.messages && locals.messages.length> 0) { %>
-  <% messages.forEach((message)=> { %>
   <ul class="message-list">
+    <% messages.forEach((message)=> { %>
     <li class="message">
+      <div class="user-container"><span class="user"><%= message.user %></span> <span class="postfix">said...</span></div>
       <div class="text">
         <%= message.text %>
       </div>
-      <div class="user"><%= message.user %></div>
-      <div class="added"><%= message.added.toUTCString() %></div>
+      <div class="date-added">Added at: <%= message.added.toUTCString() %></div>
     </li>
+    <% }); %>
   </ul>
-  <% }); %>
   <% } else { %>
   <p>There are currently no messages.</p>
   <% } %>

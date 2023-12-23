@@ -1,8 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
   font:
     14px 'Lucida Grande',
     Helvetica,
     Arial,
     sans-serif;
+}
+
+h1 {
+  margin-block: 16px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.message-list .message {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 1.4rem;
+}
+
+.message .user {
+  font-size: 1.2rem;
+}
+
+.message .date-added,
+.message .postfix {
+  color: gray;
+  font-size: 1rem;
+}
+
+.message .date-added {
+  align-self: flex-end;
 }
