@@ -7,8 +7,18 @@ interface Message {
 }
 
 const MessageSchema = new Schema<Message>({
-  text: String,
-  user: String,
+  text: {
+    type: String,
+    minlength: 2,
+    maxlength: 3000,
+    required: true,
+  },
+  user: {
+    type: String,
+    minlength: 2,
+    maxlength: 24,
+    required: true,
+  },
   added: {
     type: Date,
     default: Date.now,
