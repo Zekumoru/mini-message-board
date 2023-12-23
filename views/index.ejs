@@ -15,7 +15,7 @@
       <div class="text">
         <%= message.text %>
       </div>
-      <div class="date-added">Added at: <%= message.added.toUTCString() %></div>
+      <div class="date-added">Added: <%= message.added.toDateString() %> at <%= message.added.toLocaleTimeString() %></div>
     </li>
     <% }); %>
   </ul>
