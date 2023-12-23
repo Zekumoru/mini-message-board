@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 
 console.log('This script populates the message collection with sample data.');
 console.warn(
-  'Warning: Re-running this script will/might duplicate the sample data!'
+  'Warning: Re-running this script will/might duplicate the sample data!',
 );
 
 mongoose.set('strictQuery', false);
@@ -21,7 +21,7 @@ const dbConnectionString = process.env.DB_CONNECTION_STRING;
   console.log('Debug: db connection successfully closed');
 })().catch((error: { message: string }) => {
   console.error(
-    `An error occured while trying to populate the message collection: ${error.message}`
+    `An error occured while trying to populate the message collection: ${error.message}`,
   );
 });
 
@@ -46,8 +46,8 @@ async function messageCreate(message: Omit<Message, 'added'>) {
   console.log(
     `Added message: ${ellipseString(message.user, 10)} ${ellipseString(
       message.text,
-      30
-    )}`
+      30,
+    )}`,
   );
 }
 
