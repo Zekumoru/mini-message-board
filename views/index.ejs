@@ -7,21 +7,24 @@
   <h1>
     <%= locals.title %>
   </h1>
-  <% if (locals.messages && locals.messages.length> 0) { %>
-  <ul class="message-list">
-    <% messages.forEach((message)=> { %>
-    <li class="message">
-      <div class="user-container"><span class="user"><%= message.user %></span> <span class="postfix">said...</span></div>
-      <div class="text">
-        <%= message.text %>
-      </div>
-      <div class="date-added">Added: <%= message.added.toDateString() %> at <%= message.added.toLocaleTimeString() %></div>
-    </li>
-    <% }); %>
-  </ul>
-  <% } else { %>
-  <p>There are currently no messages.</p>
-  <% } %>
+
+  <main>
+    <% if (locals.messages && locals.messages.length> 0) { %>
+    <ul class="message-list">
+      <% messages.forEach((message)=> { %>
+      <li class="message">
+        <div class="user-container"><span class="user"><%= message.user %></span> <span class="postfix">said...</span></div>
+        <div class="text">
+          <%= message.text %>
+        </div>
+        <div class="date-added">Added: <%= message.added.toDateString() %> at <%= message.added.toLocaleTimeString() %></div>
+      </li>
+      <% }); %>
+    </ul>
+    <% } else { %>
+    <p>There are currently no messages.</p>
+    <% } %>
+  </main>
 </body>
 
 </html>
