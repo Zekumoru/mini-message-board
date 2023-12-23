@@ -18,6 +18,14 @@ h1 {
   margin-block: 16px;
 }
 
+h2 {
+  margin-block: 8px;
+}
+
+.error-message {
+  font-size: 1.2rem;
+}
+
 ul {
   list-style-type: none;
 }
