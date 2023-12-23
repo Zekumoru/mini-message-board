@@ -58,6 +58,10 @@ ul {
  * Index styles
  */
 
+.no-messages {
+  font-size: 1.2rem;
+}
+
 .message-list {
   display: flex;
   flex-direction: column;
