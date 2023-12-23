@@ -1,11 +1,27 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<%- include('partials/head') %>
+
+<body>
+  <h1>
+    <%= locals.title %>
+  </h1>
+  <% if (locals.messages && locals.messages.length> 0) { %>
+  <% messages.forEach((message)=> { %>
+  <ul class="message-list">
+    <li class="message">
+      <div class="text">
+        <%= message.text %>
+      </div>
+      <div class="user"><%= message.user %></div>
+      <div class="added"><%= message.added.toUTCString() %></div>
+    </li>
+  </ul>
+  <% }); %>
+  <% } else { %>
+  <p>There are currently no messages.</p>
+  <% } %>
+</body>
+
 </html>

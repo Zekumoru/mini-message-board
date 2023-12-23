@@ -4,8 +4,20 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import indexRouter from './routes';
+import mongoose from 'mongoose';
+
+const dbConnectionString = process.env.DB_CONNECTION_STRING;
 
 const app = express();
+
+// connect to db
+mongoose.set('strictQuery', false);
+(async () => {
+  await mongoose.connect(dbConnectionString);
+  console.log('Server has successfully connected to MongoDB');
+})().catch((error: { message: string }) => {
+  console.error(`Server could not connect to MongoDB: ${error.message}`);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,7 +45,7 @@ app.use(
     },
     req: Request,
     res: Response,
-    next: NextFunction
+    next: NextFunction,
   ) => {
     // set locals, only providing error in development
     res.locals.message = err.message;
@@ -42,7 +54,7 @@ app.use(
     // render the error page
     res.status(err.status || 500);
     res.render('error');
-  }
+  },
 );
 
 export default app;
