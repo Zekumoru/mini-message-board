@@ -14,7 +14,7 @@ const app = express();
 // connect to db
 mongoose.set('strictQuery', false);
 (async () => {
-  await mongoose.connect(dbConnectionString);
+  await mongoose.connect(dbConnectionString ?? '');
   console.log('Server has successfully connected to MongoDB');
 })().catch((error: { message: string }) => {
   console.error(`Server could not connect to MongoDB: ${error.message}`);
