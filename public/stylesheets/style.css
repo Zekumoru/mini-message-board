@@ -22,6 +22,10 @@ ul {
   list-style-type: none;
 }
 
+/**
+ * Index styles
+ */
+
 .message-list {
   display: flex;
   flex-direction: column;
@@ -47,4 +51,47 @@ ul {
 
 .message .date-added {
   align-self: flex-end;
+}
+
+/**
+ * Form styles
+ */
+
+#message-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#message-form label {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+#message-form input[type="text"],
+#message-form textarea {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  padding: 8px;
+}
+
+#message-form textarea {
+  resize: none;
+}
+
+#message-form button {
+  font-size: 1.2rem;
+  padding: 16px 48px;
+  border-radius: 4px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+#message-form button:hover {
+  background-color: hsl(0, 0%, 10%);
+}
+
+#message-form button:active {
+  background-color: hsl(0, 0%, 20%);
 }
