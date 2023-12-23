@@ -7,6 +7,7 @@ declare global {
       NODE_ENV: 'development' | 'production';
       DB_CONNECTION_STRING: string;
       PERSONAL_IP: string;
+      DEV_NAME: string;
     }
   }
 }

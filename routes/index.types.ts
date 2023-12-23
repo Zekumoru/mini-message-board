@@ -1,12 +1,16 @@
 import Message from '../models/message';
 
+interface DevMessage extends Message {
+  isDev: boolean;
+}
+
 interface IndexLocals {
   title: string;
-  messages: Message[];
+  messages: DevMessage[];
 }
 
 declare module 'express-serve-static-core' {
   interface Locals extends IndexLocals {}
 }
 
-export type { IndexLocals };
+export type { IndexLocals, DevMessage };

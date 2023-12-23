@@ -15,7 +15,13 @@
     <ul class="message-list">
       <% messages.forEach((message)=> { %>
       <li class="message">
-        <div class="user-container"><span class="user"><%= message.user %></span> <span class="postfix">said...</span></div>
+        <div class="user-container">
+          <span class="user"><%= message.user %></span>
+          <% if (message.isDev) { %>
+          <span class="dev-flair" aria-label="developer">Dev</span>
+          <% } %>
+          <span class="postfix">said...</span>
+        </div>
         <div class="text">
           <%= message.text %>
         </div>
