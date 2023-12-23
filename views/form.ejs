@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+<%- include('partials/head') %>
+
+<body>
+  <h1>
+    <%= locals.title %>
+  </h1>
+  <form action="/new" method="post">
+    <label for="username">
+      Username
+    </label>
+    <input id="username" type="text" name="user" minlength="2" maxlength="24" required>
+    <label for="message">
+      Message
+    </label>
+    <textarea name="text" id="message" cols="30" rows="10" minlength="2" maxlength="3000" placeholder="Enter your message here..." required></textarea>
+    <button>Submit</button>
+  </form>
+</body>
+
+</html>
