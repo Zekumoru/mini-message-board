@@ -34,11 +34,12 @@ ul {
 
 #main-nav ul {
   display: flex;
+  flex-direction: column;
 }
 
 #main-nav a {
   display: block;
-  padding: 18px 38px;
+  padding: 18px 24px;
   text-decoration: none;
   font-weight: bold;
   color: white;
@@ -52,6 +53,16 @@ ul {
 #main-nav a:active {
   background-color: hsl(0, 0%, 72%);
   color: black;
+}
+
+@media only screen and (min-width: 600px) {
+  #main-nav ul {
+    flex-direction: row;
+  }
+
+  #main-nav a {
+    padding-inline: 36px;
+  }
 }
 
 /**
