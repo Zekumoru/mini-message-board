@@ -6,6 +6,7 @@ declare global {
       PORT: string;
       NODE_ENV: 'development' | 'production';
       DB_CONNECTION_STRING: string;
+      PERSONAL_IP: string;
     }
   }
 }

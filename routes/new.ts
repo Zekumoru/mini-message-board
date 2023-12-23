@@ -4,8 +4,30 @@ import express from 'express';
 
 const router = express.Router();
 
+const title = 'Add a new message';
 router.get('/', (_req, res) => {
-  res.render('form', { title: 'Add a new message' } as NewLocals);
+  res.render('form', { title } as NewLocals);
+});
+
+const personalIp = process.env.PERSONAL_IP;
+router.post('/', (req: NewRequest, res, next) => {
+  if (req.app.get('env') === 'development') {
+    next();
+    return;
+  }
+
+  const ip = req.headers['x-forwarded-for'];
+  if (ip === personalIp) {
+    next();
+    return;
+  }
+
+  res.status(403).render('form', {
+    title,
+    errorMessage: 'You do not have permission to use that name!',
+    user: req.body.user,
+    text: req.body.text,
+  } as NewLocals);
 });
 
 router.post('/', async (req: NewRequest, res) => {

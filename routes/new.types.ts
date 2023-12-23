@@ -7,6 +7,7 @@ interface BodyRequest {
 
 interface NewLocals extends BodyRequest {
   title: string;
+  errorMessage: string;
 }
 
 declare module 'express-serve-static-core' {

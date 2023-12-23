@@ -15,11 +15,14 @@
       <label for="username">
         Username
       </label>
-      <input id="username" type="text" name="user" minlength="2" maxlength="24" placeholder="Enter your username..." required>
+      <input id="username" type="text" value="<%= locals.user %>" name="user" minlength="2" maxlength="24" placeholder="Enter your username..." required>
       <label for="message">
         Message
       </label>
-      <textarea name="text" id="message" cols="30" rows="10" minlength="2" maxlength="3000" placeholder="Enter your message here..." required></textarea>
+      <textarea name="text" id="message" cols="30" rows="10" minlength="2" maxlength="3000" placeholder="Enter your message here..." required><%= locals.text %></textarea>
+      <% if (locals.errorMessage) { %>
+      <p class="error-message">Error: <%= locals.errorMessage %></p>
+      <% } %>
       <button>Submit</button>
     </form>
   </main>

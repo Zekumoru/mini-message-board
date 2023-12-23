@@ -133,6 +133,11 @@ ul {
   resize: none;
 }
 
+#message-form .error-message {
+  margin-bottom: 16px;
+  color: red;
+}
+
 #message-form button {
   font-size: 1.2rem;
   padding: 16px 48px;
