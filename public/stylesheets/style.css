@@ -22,6 +22,38 @@ ul {
   list-style-type: none;
 }
 
+
+/**
+ * Main navigation styles
+ */
+
+#main-nav {
+  background-color: hsl(0, 0%, 0%);
+  margin-block: 16px;
+}
+
+#main-nav ul {
+  display: flex;
+}
+
+#main-nav a {
+  display: block;
+  padding: 18px 38px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+#main-nav a:hover {
+  background-color: hsl(0, 0%, 80%);
+  color: black;
+}
+
+#main-nav a:active {
+  background-color: hsl(0, 0%, 72%);
+  color: black;
+}
+
 /**
  * Index styles
  */
@@ -89,9 +121,11 @@ ul {
 }
 
 #message-form button:hover {
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsl(0, 0%, 80%);
+  color: black;
 }
 
 #message-form button:active {
-  background-color: hsl(0, 0%, 20%);
+  background-color: hsl(0, 0%, 72%);
+  color: black;
 }

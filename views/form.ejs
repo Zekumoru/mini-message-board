@@ -8,6 +8,8 @@
     <%= locals.title %>
   </h1>
 
+  <%- include('partials/nav.ejs') %>
+
   <main>
     <form id="message-form" action="/new" method="post">
       <label for="username">

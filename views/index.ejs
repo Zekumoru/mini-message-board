@@ -8,6 +8,8 @@
     <%= locals.title %>
   </h1>
 
+  <%- include('partials/nav.ejs') %>
+
   <main>
     <% if (locals.messages && locals.messages.length> 0) { %>
     <ul class="message-list">
