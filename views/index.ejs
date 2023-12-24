@@ -22,9 +22,7 @@
           <% } %>
           <span class="postfix">said...</span>
         </div>
-        <div class="text">
-          <%= message.text %>
-        </div>
+        <pre class="text"><%= message.text %></pre>
         <div class="date-added">Added: <%= message.added.toDateString() %> at <%= message.added.toLocaleTimeString() %></div>
       </li>
       <% }); %>

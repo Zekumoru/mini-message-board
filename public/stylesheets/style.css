@@ -98,6 +98,12 @@ ul {
   font-size: 1.2rem;
 }
 
+.message .text {
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
 .message .dev-flair {
   display: inline-block;
   font-size: 0.8rem;
