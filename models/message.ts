@@ -18,6 +18,7 @@ const MessageSchema = new Schema<Message>({
     minlength: 2,
     maxlength: 24,
     required: true,
+    trim: true,
   },
   added: {
     type: Date,

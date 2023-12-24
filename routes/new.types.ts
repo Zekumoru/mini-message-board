@@ -16,4 +16,4 @@ declare module 'express-serve-static-core' {
 
 type NewRequest = Request<{}, {}, BodyRequest>;
 
-export type { NewLocals, NewRequest };
+export type { NewLocals, NewRequest, BodyRequest };

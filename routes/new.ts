@@ -1,5 +1,6 @@
+import bodyMiddleware from '../middlewares/body';
 import Message from '../models/message';
-import { NewLocals, NewRequest } from './new.types';
+import { BodyRequest, NewLocals, NewRequest } from './new.types';
 import express from 'express';
 
 const router = express.Router();
@@ -11,6 +12,13 @@ router.get('/', (_req, res) => {
 
 const personalIp = process.env.PERSONAL_IP;
 const devName = process.env.DEV_NAME;
+
+router.post(
+  '/',
+  bodyMiddleware<BodyRequest>((body) => {
+    body.user.trim();
+  }),
+);
 
 router.post('/', (req: NewRequest, res, next) => {
   if (req.app.get('env') === 'development') {
