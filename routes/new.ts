@@ -16,7 +16,8 @@ const devName = process.env.DEV_NAME;
 router.post(
   '/',
   bodyMiddleware<BodyRequest>((body) => {
-    body.user.trim();
+    body.user = body.user.trim();
+    return body;
   }),
 );
 
